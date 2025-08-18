@@ -1,0 +1,14 @@
+<button nz-button nzType="primary" (click)="isVisible = true">
+	Apply Discount
+</button>
+
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Apply discount" (nzOnCancel)="handleCancel()" [nzFooter]="modalFooter"   nzClassName="discount-modal">
+	<ng-container *nzModalContent>
+		<app-discount-form #discountForm></app-discount-form>
+	</ng-container>
+
+	<ng-template #modalFooter>
+		<button nz-button nzType="default" (click)="handleCancel()">Close</button>
+		<button nz-button nzType="primary" (click)="handleOk(discountForm)">Apply</button>
+	</ng-template>
+</nz-modal>

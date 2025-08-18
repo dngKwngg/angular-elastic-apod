@@ -1,0 +1,3 @@
+::ng-deep .discount-modal .ant-modal-body {
+  padding-bottom: 8px !important; /* adjust as needed */
+}

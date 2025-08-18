@@ -1,0 +1,26 @@
+[nz-radio] {
+        display: block;
+        height: 32px;
+        line-height: 32px;
+    }
+
+nz-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 64px !important;
+  margin-bottom: 64px;
+}
+
+::ng-deep .ant-radio-wrapper > span:not(.ant-radio) {
+	display: flex;
+	flex-direction: column;
+	padding-left: 24px;
+	position: relative;
+	top: -32px
+}
+
+.button-row {
+	display: flex;
+	gap: 8px;
+	margin-top: 64px;
+}

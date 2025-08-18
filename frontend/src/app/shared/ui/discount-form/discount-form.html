@@ -1,0 +1,26 @@
+<nz-radio-group [(ngModel)]="radioValue">
+	<!-- Unit Price Discount -->
+	<label nz-radio nzValue="unitPrice">
+		<span>Unit Price Discount</span>
+			<input nz-input [(ngModel)]="value" type="number" style="width: 250px;" [disabled]="radioValue !== 'unitPrice'"/>
+		<small class="note">* Applies to all unit prices in the invoice</small>
+	</label>
+
+	<!-- Total Invoice Discount -->
+	<label nz-radio nzValue="totalInvoice">
+		<span>Total Invoice Discount</span>
+		<div style="display: flex; gap: 8px; align-items: center;">
+			<nz-select [(ngModel)]="discountType" style="width: 80px;" [disabled]="radioValue !== 'totalInvoice'">
+				<nz-option nzLabel="%" nzValue="%"></nz-option>
+				<nz-option nzLabel="$" nzValue="$"></nz-option>
+			</nz-select>
+			<input nz-input [(ngModel)]="discountValue" type="number" style="width: 150px;" [disabled]="radioValue !== 'totalInvoice'"/>
+		</div>
+		<small class="note">* Applies to all final invoice total</small>
+	</label>
+</nz-radio-group>
+
+<!-- <div class="button-row">
+	<button nz-button nzType="default" (click)="onClose()">Close</button>
+	<button nz-button nzType="primary" (click)="onApply()">Apply</button>
+</div> -->
