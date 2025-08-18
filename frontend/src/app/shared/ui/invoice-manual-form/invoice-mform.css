@@ -1,0 +1,8 @@
+[nz-form] {
+        max-width: 600px;
+}
+
+[nz-form] .ant-form-item-label{
+	white-space: nowrap;
+    overflow: visible;
+}

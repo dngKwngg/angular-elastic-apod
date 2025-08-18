@@ -1,0 +1,92 @@
+<form nz-form [formGroup]="form" [nzLayout]="'vertical'" (ngSubmit)="submitForm()">
+	<!-- Input -->
+	<div nz-row [nzGutter]="16">
+		<div nz-col nzSpan="12">
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="invoiceNo">Invoice No.</nz-form-label>
+					<nz-form-control>
+						<nz-input-group>
+						<input formControlName="invoiceNo" nz-input placeholder="Invoice No" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="soNo">SO No.</nz-form-label>
+				<nz-form-control>
+					<nz-input-group>
+						<input formControlName="soNo" nz-input placeholder="SO No" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="term">Term</nz-form-label>
+				<nz-form-control>
+					<nz-input-group>
+						<input formControlName="term" nz-input placeholder="Term" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+
+		<div nz-col nzSpan="12">
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="customerName">Customer Name</nz-form-label>
+				<nz-form-control>
+					<nz-input-group>
+						<input formControlName="customerName" nz-input placeholder="Customer Name" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+				
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="address">Address</nz-form-label>
+				<nz-form-control>
+					<nz-input-group>
+						<input formControlName="address" nz-input placeholder="Address" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+				
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="tel">Tel</nz-form-label>
+				<nz-form-control>
+					<nz-input-group>
+						<input formControlName="tel" nz-input placeholder="Tel" />
+					</nz-input-group>
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+	</div>
+
+	<!-- Table -->
+	<div class="table-section">
+		<nz-table #invoiceTable [nzBordered]="true" [nzSize]="'middle'" [nzShowPagination]="false" [nzData]="listOfData">
+			<thead>
+				<tr>
+					@for (column of listOfColumns; track column) {
+					<th>{{ column.title }}</th>
+					}
+				</tr>
+			</thead>
+		
+			<!-- <tbody>
+				@for (item of invoiceTable.data; track item.id) {
+				<tr>
+					@for (col of listOfColumns; track col.key) {
+					<td>{{ item[col.key] }}</td>
+					}
+				</tr>
+				}
+			</tbody> -->
+		</nz-table>
+	</div>
+
+	<!-- Button -->
+	<nz-form-item>
+		<nz-form-control>
+			<button nz-button nzType="primary">Create</button>
+		</nz-form-control>
+	</nz-form-item>
+</form>
