@@ -1,1 +1,3 @@
-<app-test></app-test>
+<app-search-bar (resultsChange)="results = $event"> </app-search-bar>
+
+<app-record-list [results]="results"></app-record-list>
