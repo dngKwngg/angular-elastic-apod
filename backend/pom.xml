@@ -57,8 +57,14 @@
 			<artifactId>elasticsearch-java</artifactId>
 			<version>8.13.0</version> <!-- Docker still in version 8.13.0 -->
 		</dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.2.5</version>
+        </dependency>
 
-	</dependencies>
+
+    </dependencies>
 
 	<build>
 		<plugins>
