@@ -1,11 +1,12 @@
 package com.project.demo.service.data;
 
 import com.project.demo.model.DeliveryRow;
+import com.project.demo.model.TransactionRow;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class DeliveryRowFactory {
+public class DataFactory {
     public static List<DeliveryRow> createDeliveryRows(int quantity) {
         return List.of(
                 new DeliveryRow(1, "Customer A", "Product X", LocalDate.now(), "PO12345", quantity,
@@ -18,6 +19,14 @@ public class DeliveryRowFactory {
                                 105, 115, 125, 135, 145,
                                 155, 165, 175, 185,
                                 195), 500)
+        );
+    }
+
+    public static List<TransactionRow> createTransactionRows(){
+        return List.of(
+                new TransactionRow(LocalDate.now(), "Customer A", "P001", "Product X", 10, 100),
+                new TransactionRow(LocalDate.now(), "Customer B", "P002", "Product Y", 5, 50),
+                new TransactionRow(LocalDate.now(), "Customer C", "P003", "Product Z", 20, 200)
         );
     }
 }
