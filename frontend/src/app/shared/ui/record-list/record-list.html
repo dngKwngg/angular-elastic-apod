@@ -1,0 +1,8 @@
+<div class="results">
+  @for (item of results ?? []; track item.date) {
+    <div class="result-card">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.explanation }}</p>
+    </div>
+  }
+</div>
