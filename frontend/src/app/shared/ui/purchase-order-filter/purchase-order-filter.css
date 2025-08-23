@@ -1,0 +1,24 @@
+.po-filter-selector {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.po-filter-selector nz-date-picker {
+  width: 100%;
+}
+
+.po-filter-selector nz-select {
+  width: 100%;
+}
+
+.po-filter-btns {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.po-filter-btns button {
+  flex: 1;
+}

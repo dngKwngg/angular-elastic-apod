@@ -1,0 +1,50 @@
+<form nz-form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+  <div class="po-filter-selector">
+    <nz-form-item>
+      <nz-form-label nzRequired>Month</nz-form-label>
+      <nz-form-control
+        nzErrorTip="Please select a month"
+      >
+        <nz-date-picker
+          nzMode="month"
+          formControlName="month">
+        </nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+
+
+    <nz-form-item>
+      <nz-form-label>Product</nz-form-label>
+      <nz-select formControlName="productId" [nzPlaceHolder]="'Select Product'" nzAllowClear>
+        @for (product of productList; track product.id) {
+          <nz-option [nzValue]="product.id" [nzLabel]="product.name"></nz-option>
+        }
+      </nz-select>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label>Customer</nz-form-label>
+      <nz-select formControlName="customerId" [nzPlaceHolder]="'Select Customer'" nzAllowClear>
+        @for (customer of customerList; track customer.id) {
+          <nz-option [nzValue]="customer.id" [nzLabel]="customer.name"></nz-option>
+        }
+      </nz-select>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label>Status</nz-form-label>
+      <nz-select formControlName="status" [nzPlaceHolder]="'Select Status'" nzAllowClear>
+        @for (status of statusList; track status) {
+          <nz-option [nzValue]="status" [nzLabel]="status"></nz-option>
+        }
+      </nz-select>
+    </nz-form-item>
+  </div>
+
+  <div class="po-filter-btns">
+    <button nz-button nzType="default" type="button" (click)="onReset()" style="margin-right: 8px;">
+      Reset
+    </button>
+    <button nz-button nzType="primary">Filter</button>
+  </div>
+</form>

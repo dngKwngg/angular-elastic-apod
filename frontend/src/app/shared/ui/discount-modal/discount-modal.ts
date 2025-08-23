@@ -7,10 +7,10 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
   selector: 'app-test',
   standalone: true,
   imports: [NzModalModule, DiscountFormComponent, NzButtonModule],
-  templateUrl: './test-component.html',
-  styleUrls: ['./test-component.css'],
+  templateUrl: './discount-modal.html',
+  styleUrls: ['./discount-modal.css'],
 })
-export class TestComponent {
+export class DiscountModal {
   isVisible = false;
 
   // 👇 link template reference to component instance
