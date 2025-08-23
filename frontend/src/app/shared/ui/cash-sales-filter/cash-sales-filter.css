@@ -1,0 +1,18 @@
+.cs-filter-selector {
+  padding: 16px;
+}
+
+.cs-filter-selector nz-date-picker {
+  width: 100%;
+}
+
+.cs-filter-btns {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.cs-filter-btns button {
+  flex: 1;
+}

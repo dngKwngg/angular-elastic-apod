@@ -1,0 +1,31 @@
+<form nz-form [formGroup]="filterForm" (ngSubmit)="onSubmit()" nzLayout="vertical">
+  <div class="cs-filter-selector">
+    <nz-form-item>
+      <nz-form-label nzRequired>Date From</nz-form-label>
+      <nz-form-control nzErrorTip="Please select a date">
+        <nz-date-picker formControlName="dateFrom" nzPlacement="bottomRight"></nz-date-picker>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label nzRequired>Date To</nz-form-label>
+      <nz-form-control [nzErrorTip]="dateToErrorTpl">
+        <nz-date-picker formControlName="dateTo" nzPlacement="bottomRight"></nz-date-picker>
+
+        <ng-template #dateToErrorTpl let-control>
+          @if (control.hasError('required')) {
+            Please select a date
+          } @else if (control.hasError('invalidRange')) {
+            Date To cannot be earlier than Date From
+          }
+        </ng-template>
+      </nz-form-control>
+    </nz-form-item>
+
+  </div>
+
+  <div class="cs-filter-btns">
+    <button nz-button nzType="default" type="button" (click)="onReset()">Reset</button>
+    <button nz-button nzType="primary" type="submit">Filter</button>
+  </div>
+</form>
