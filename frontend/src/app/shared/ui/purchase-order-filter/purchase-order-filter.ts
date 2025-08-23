@@ -44,7 +44,7 @@ export class PurchaseOrderFilterComponent {
     // fields can be null
     productId: this.fb.control<number | null>(null),
     customerId: this.fb.control<number | null>(null),
-    status: new FormControl<string | null>(null)
+    status: new FormControl<string | null>("Open")
   });
 
   onSubmit() {
